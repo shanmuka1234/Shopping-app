@@ -1,0 +1,13 @@
+{% load static %}
+<body bgcolor=lightblue>
+    {% if request.user.is_authenticated %}
+    <p>{{ request.user.username}}</p>
+    <a href="{% url 'logouturl' %}">Logout</a>
+    <center>
+        <img src="{% static 'images/hanuman_pic.jpg' %}" alt="" height="300" width="450">
+    </center>
+    {% else %}
+        <a href="{% url 'loginurl' %}">Login</a>
+        <a href="{% url 'signupurl' %}">Signup</a>
+    {% endif %}
+</body>
